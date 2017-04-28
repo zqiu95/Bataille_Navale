@@ -11,10 +11,11 @@ from tkinter import *
 import threading
 
 
-#if(len(sys.argv) < 2) :
-#       print ("\nUsage : python telnet.py hostname\n")
-#       sys.exit()
-# host = sys.argv[1]
+if(len(sys.argv) < 2) :
+    print ("\nUsage : python telnet.py hostname\n")
+    sys.exit()
+HOST = sys.argv[1]
+PORT = 7777
 
 def quitter():
     global socketClient
@@ -113,8 +114,7 @@ menu_fichier = Menu(mon_menu)
 mon_menu.add_cascade(label="Fichier", menu=menu_fichier)
 menu_fichier.add_command(label="Quitter", command=quitter)
 
-HOST = "localhost"
-PORT = 7777
+
 socketClient = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 
